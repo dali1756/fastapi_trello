@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "fastapi-trello"
+version = "0.1.0"
+description = ""
+authors = ["Jeter Chen <dali1756@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
