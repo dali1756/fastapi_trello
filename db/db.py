@@ -13,4 +13,5 @@ engine = create_engine(DATABASE_URL)
 # 創建會話工廠
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 # 創建基礎類別
-Base = declarative_base()
+BaseModel = declarative_base()
+SESSION_SECRET_KEY = os.getenv("SESSION_SECRET_KEY")
