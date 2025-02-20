@@ -3,20 +3,13 @@ from app import templates
 from models.users import User
 from fastapi.responses import RedirectResponse
 from sqlalchemy.orm import Session
-from db.db import SessionLocal, engine
+from utils import get_db
 from passlib.context import CryptContext
 from typing import Annotated
 
 
 user = APIRouter()
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 def get_current_user(request: Request):
     user_id = request.session.get("user_id")

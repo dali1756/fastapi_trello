@@ -1,5 +1,6 @@
 from app import app
-from app.users.views import user as user_route, get_current_user, project_route
+from app.users.views import user as user_route, get_current_user
+from app.projects.views import project as project_route
 from fastapi.responses import RedirectResponse
 from fastapi import Request, status, Depends
 from app import templates
