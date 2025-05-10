@@ -15,3 +15,4 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 # 創建基礎類別
 BaseModel = declarative_base()
 SESSION_SECRET_KEY = os.getenv("SESSION_SECRET_KEY")
+Base = declarative_base()
