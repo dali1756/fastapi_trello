@@ -1,8 +1,8 @@
-from db.db import Base
+from db.db import BaseModel
 from sqlalchemy import Column, Integer, String, Text, DateTime
 from sqlalchemy.orm import relationship
 
-class Project(Base):
+class Project(BaseModel):
     __tablename__ = "projects"
 
     id = Column(Integer, primary_key=True, nullable=False)
