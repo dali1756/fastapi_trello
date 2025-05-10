@@ -12,6 +12,7 @@ from models.users import User
 from models.projects import Project
 from models.user_projects import UserProject
 from models.lanes import Lane
+from models.tasks import Task
 
 config = context.config
 config.set_main_option("sqlalchemy.url", DATABASE_URL)

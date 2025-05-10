@@ -6,6 +6,7 @@ from utils.get_db import get_db
 from models.lanes import Lane
 from models.users import User
 from models.projects import Project
+from models.tasks import Task
 from typing import Annotated, Optional
 from schemas.lane import LaneCreate, LaneUpdate
 from utils.auth import get_current_active_user
