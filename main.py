@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from typing import Annotated, Literal
 from pydantic import BaseModel, Field
 from starlette.middleware.base import BaseHTTPMiddleware
-from db.db import BaseModel, engine
+from db.db import engine
 from utils.get_db import get_db
 from app import app
 from app.users.views import user as user_route
