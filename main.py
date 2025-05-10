@@ -5,11 +5,12 @@ from sqlalchemy.orm import Session
 from typing import Annotated, Literal
 from pydantic import BaseModel, Field
 from starlette.middleware.base import BaseHTTPMiddleware
-from db.db import engine, BaseModel
+from db.db import Base, engine
 from utils.get_db import get_db
 from app import app
 from app.users.views import user as user_route
 from app.projects.views import project as project_route
+from app.lanes.views import lane as lane_routes
 from fastapi.staticfiles import StaticFiles
 from middleware import auth_middleware
 from fastapi.responses import RedirectResponse
