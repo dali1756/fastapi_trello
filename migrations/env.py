@@ -2,9 +2,15 @@ from logging.config import fileConfig
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 from alembic import context
+import os
+import sys
+from sqlalchemy import create_engine
+from alembic import context
+from dotenv import load_dotenv
 from db.db import DATABASE_URL, BaseModel
 from models.users import User
 from models.projects import Project
+from models.user_projects import UserProject
 
 config = context.config
 config.set_main_option("sqlalchemy.url", DATABASE_URL)

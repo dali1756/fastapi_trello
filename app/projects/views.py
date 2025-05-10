@@ -3,7 +3,6 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from sqlalchemy.orm import Session
 from utils.get_db import get_db
 from models.projects import Project
-from models.lanes import Lane
 from models.users import User
 from typing import Annotated, Optional
 from schemas.project import ProjectCreate, ProjectUpdate
