@@ -1,14 +1,37 @@
-```
-fastapi_trello
-├─ .venv
-├─ README.md
-├─ app
-├─ db
-├─ main.py
-├─ models
-├─ .env.example
-├─ .gitignore
-├─ poetry.lock
-├─ pyproject.toml
-└─ templates
-```
+# 專案簡介
+
+## 備註
+
+## 目錄
+- [專案簡介](#專案簡介)
+   - [目錄](#目錄)
+   - [功能](#功能)
+   - [使用](#使用)
+   - [安裝](#安裝)
+      - [系統要求](#系統要求)
+      - [安裝步驟](#安裝步驟)
+   - [技術棧](#技術棧)
+   - [其他](#其他)
+   - [專案資料結構](#專案資料結構)
+
+## 功能
+
+## 安裝
+
+### 系統要求
+- `Python 3.11`
+- `FastAPI free`
+
+### 安裝步驟
+
+## 技術棧
+本專案使用以下技術和工具：
+- 前端：`HTMX`、`Alpine.js`
+- 後端：`Python3`、`FastAPI`
+- 版本控制：`Git`
+- 資料庫：`PostgreSQL`
+- 其他：`SQLAlchemy`、`Alembic`
+
+## 其他
+
+## 專案資料結構
