@@ -26,11 +26,11 @@
 
 ## 技術棧
 本專案使用以下技術和工具：
-- 前端：`HTMX`、`Alpine.js`
+- 前端：`HTMX`、`Alpine.js`、`TailwindCSS`
 - 後端：`Python3`、`FastAPI`
 - 版本控制：`Git`
 - 資料庫：`PostgreSQL`
-- 其他：`SQLAlchemy`、`Alembic`
+- 其他：`SQLAlchemy`、`Alembic`、`SweetAlert2`
 
 ## 其他
 
