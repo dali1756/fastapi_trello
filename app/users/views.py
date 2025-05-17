@@ -14,6 +14,7 @@ from utils.auth import (
     ACCESS_TOKEN_EXPIRE_MINUTES
 )
 from models.users import User
+import urllib.parse
 
 user = APIRouter()
 
@@ -37,7 +38,8 @@ def register(request: Request, name: Annotated[str, Form()], email: Annotated[st
     # 自動登入並生成 token
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(data={"sub": email}, expires_delta=access_token_expires)
-    response = RedirectResponse(url="/projects", status_code=status.HTTP_302_FOUND)
+    encoded_name = urllib.parse.quote(name)
+    response = RedirectResponse(url=f"/projects?register=success&name={encoded_name}", status_code=status.HTTP_302_FOUND)
     response.set_cookie(key="access_token", value=f"Bearer {access_token}", httponly=True)
     return response
 
@@ -52,14 +54,13 @@ async def login(request: Request, form_data: Annotated[OAuth2PasswordRequestForm
         return templates.TemplateResponse("auth/login.html", {"request": request, "error": "無效的電子郵件或密碼"}, status_code=400)
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(data={"sub": user.email}, expires_delta=access_token_expires)
-    
-    response = RedirectResponse(url="/projects", status_code=status.HTTP_302_FOUND)
+    response = RedirectResponse(url=f"/projects?login=success&name={urllib.parse.quote(user.name)}", status_code=status.HTTP_302_FOUND)
     response.set_cookie(key="access_token", value=f"Bearer {access_token}", httponly=True)
     return response
 
 @user.get("/logout")
 def logout():
-    response = RedirectResponse(url="/users/login", status_code=status.HTTP_302_FOUND)
+    response = RedirectResponse(url="/users/login?logout=success", status_code=status.HTTP_302_FOUND)
     response.delete_cookie(key="access_token")
     return response
 
